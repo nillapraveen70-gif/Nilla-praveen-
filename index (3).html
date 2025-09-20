@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to My Personal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        #greeting {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        button {
+            font-size: 1em;
+            padding: 10px 24px;
+            background: #22a7f0;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1b8ac6;
+        }
+    </style>
+</head>
+<body>
+    <div id="greeting"></div>
+    <button onclick="showMessage()">Click Me!</button>
+
+    <script>
+        // Function to display a greeting based on the time of day
+        function displayGreeting() {
+            const now = new Date();
+            const hour = now.getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good Morning!";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon!";
+            } else {
+                greeting = "Good Evening!";
+            }
+
+            document.getElementById('greeting').innerText = greeting + " Welcome to my personal website.";
+        }
+
+        // Function to show a message when the button is clicked
+        function showMessage() {
+            alert("Thank you for visiting my website!");
+        }
+
+        // Call displayGreeting on page load
+        displayGreeting();
+    </script>
+</body>
+</html>
